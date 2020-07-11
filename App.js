@@ -28,7 +28,9 @@ const switchNavigator = createSwitchNavigator({
     Problem: ProblemState,
    FindDr: FindADoctor,
    Main: DrawerNavigator,   
-   One:HomeScreen,
+   Appoinments:HomeScreen,
+   BOOK: HomeScreen,
+
    Profile: DoctorProfile,
    Book: BookNow,
 

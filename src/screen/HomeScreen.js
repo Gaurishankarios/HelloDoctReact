@@ -117,7 +117,7 @@ const HomeScreen = ({ navigation }) => {
                     showsHorizontalScrollIndicator={false}>
 
                     <CardViewWithImage
-                        source={require('../assests/test80.png')}  //ENT-01
+                        source={require('../assests/spl01.png')}  //ENT-01
                         imageWidth={80}
                         imageHeight={80}
                         resizeMode={true}
@@ -130,7 +130,7 @@ const HomeScreen = ({ navigation }) => {
                     />
 
                     <CardViewWithImage
-                        source={require('../assests/Psychiatry-01.png')}
+                        source={require('../assests/spl02.png')}
                         imageWidth={80}
                         imageHeight={80}
                         resizeMode={true}
@@ -143,7 +143,7 @@ const HomeScreen = ({ navigation }) => {
 
                     <CardViewWithImage
                         // width={(200}
-                        source={require('../assests/Ayurveda-01.png')}
+                        source={require('../assests/spl03.png')}
                         title={'Ayurveda'}
                         roundedImage={false}
                         style={miniCardStyle}
@@ -155,7 +155,7 @@ const HomeScreen = ({ navigation }) => {
 
                     <CardViewWithImage
                         // width={(200}
-                        source={require('../assests/Paediatrician-01.png')}
+                        source={require('../assests/spl04.png')}
                         title={'Paediatrician'}
                         roundedImage={false}
                         style={miniCardStyle}
@@ -166,7 +166,7 @@ const HomeScreen = ({ navigation }) => {
                     />
 
                     <CardViewWithImage
-                        source={require('../assests/Orthopedist-01.png')}
+                        source={require('../assests/spl05.png')}
                         title={'Orthopedist'}
                         roundedImage={false}
                         style={miniCardStyle}
@@ -178,7 +178,7 @@ const HomeScreen = ({ navigation }) => {
 
                     <CardViewWithImage
                         // width={(200}
-                        source={require('../assests/Caediologist-01.png')}
+                        source={require('../assests/spl06.png')}
                         title={'Cardiologist'}
                         roundedImage={false}
                         style={miniCardStyle}
@@ -189,7 +189,7 @@ const HomeScreen = ({ navigation }) => {
                     />
 
                     <CardViewWithImage
-                        source={require('../assests/general-physician-01.png')}
+                        source={require('../assests/spl07.png')}
                         title={'General Physician'}
                         roundedImage={false}
                         style={miniCardStyle}
@@ -200,7 +200,7 @@ const HomeScreen = ({ navigation }) => {
                     />
 
                     <CardViewWithImage
-                        source={require('../assests/Gastroenterologis-01.png')}
+                        source={require('../assests/spl08.png')}
                         title={'Gastroenterologis'}
                         roundedImage={false}
                         style={miniCardStyle}

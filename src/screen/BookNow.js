@@ -25,6 +25,7 @@ const timeslote = [
 ];
 
 var arr = [];
+var tmparr = [false, false, false, false, false, false, false, false, false, false, false, false];
 const BookNow = ({ navigation }) => {
 
 
@@ -72,100 +73,198 @@ const BookNow = ({ navigation }) => {
     return (
         <SafeAreaView>
             <ScrollView>
-            <TouchableOpacity style={{ backgroundColor: '#61BFFF', height: 250, borderBottomLeftRadius: 50, borderBottomRightRadius: 50 }} onPress={this.toggleDrawer.bind(this)} >
+                <TouchableOpacity style={{ backgroundColor: '#61BFFF', height: 250, borderBottomLeftRadius: 50, borderBottomRightRadius: 50 }} onPress={this.toggleDrawer.bind(this)} >
 
-                <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
-                    {/* <Button title='Back' onPress={() => navigation.pop()}/> */}
-                    {/* <Button title="Back"/> */}
-                    <Text style={{ fontSize: 18, marginTop: 20, color: 'white', fontWeight: 'bold' }}>BookNow</Text>
-                    {/* <Button title="    "/> */}
-                </View>
-            </TouchableOpacity>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
+                        {/* <Button title='Back' onPress={() => navigation.pop()}/> */}
+                        {/* <Button title="Back"/> */}
+                        <Text style={{ fontSize: 18, marginTop: 20, color: 'white', fontWeight: 'bold' }}>BookNow</Text>
+                        {/* <Button title="    "/> */}
+                    </View>
+                </TouchableOpacity>
 
-            <View
-                style={{
-                    // height: "70%",
-                    flex: 1,
-                    backgroundColor: 'white',
-                    flexDirection: 'column',
-                    // justifyContent: 'center',
-                    padding: 5,
-                    // alignItems: 'center',
-                    borderRadius: 10,
-                    margin: 30,
-                    marginTop: -100,
+                <View
+                    style={{
+                        // height: "70%",
+                        flex: 1,
+                        backgroundColor: 'white',
+                        flexDirection: 'column',
+                        // justifyContent: 'center',
+                        padding: 5,
+                        // alignItems: 'center',
+                        borderRadius: 10,
+                        margin: 30,
+                        marginTop: -100,
 
-                }}>
+                    }}>
 
-                <Image style={{
-                    width: 140, height: 140, borderRadius: 70, marginTop: -80,
-                    left: '30%', borderColor: "#61BFFF", borderWidth: 7
-                }}
-                    source={require("../assests/DocImg.jpg")}
-                    resizeMode={true} />
-
-                <View style={{ justifyContent: 'center', alignSelf: 'center', alignItems: 'center' }}>
-                    <Text style={{ fontSize: 25, padding: 10 }}>Dr. Samin k. Sharma</Text>
-                    <Text style={{ fontSize: 20, padding: 0, alignItems: 'center' }}>7 years of experince</Text>
-                </View>
-
-                <CalendarStrip
-                    calendarAnimation={{ type: 'sequence', duration: 30 }}
-                    daySelectionAnimation={{
-                        type: 'border',
-                        duration: 200,
-                        borderWidth: 1.5,
-                        borderHighlightColor: 'black',
-
+                    <Image style={{
+                        width: 140, height: 140, borderRadius: 70, marginTop: -80,
+                        left: '30%', borderColor: "#61BFFF", borderWidth: 7
                     }}
-                    style={{ height: 100, paddingTop: 20, paddingBottom: 10, marginVertical: 15, marginHorizontal: -5, }}
-                    calendarHeaderStyle={{ color: 'black' }}
-                    calendarColor={'#EDF0F2'}
-                    dateNumberStyle={{ color: 'black' }}
-                    dateNameStyle={{ color: 'black' }}
-                    highlightDateNumberStyle={{ color: 'green' }}
-                    highlightDateNameStyle={{ color: 'green' }}
-                    disabledDateNameStyle={{ color: 'purpol' }}
-                    disabledDateNumberStyle={{ color: 'purpol' }}
-                    datesWhitelist={datesWhitelist}
-                    // datesBlacklist={datesBlacklist}
-                    iconContainer={{ flex: 0.05 }}
-                    selectedDate={new Date()}
-                    // selectedDate={moment(this.props.startDateFormatted)}
-                    onDateSelected={date => onDateSelected(date)}
-                // onDateSelected={setdate => console.log(setdate)}
+                        source={require("../assests/DocImg.jpg")}
+                        resizeMode={true} />
 
-                />
-                <Text style={{margin:0, height:20}}>
-                    Morning
-                </Text>
-                <ScrollView horizontal={true} >
-                    <Button title="10:00"/>
-                    <Button title="10:30"/>
-                    <Button title="11:00"/>
-                    <Button title="11:30"/>
-                </ScrollView>
-                <Text>
-                    Afternoon
-                </Text>
-                <ScrollView horizontal={true}>
-                <Button title="1:00"/>
-                    <Button title="1:30"/>
-                    <Button title="2:00"/>
-                    <Button title="2:30"/>
-                </ScrollView>
+                    <View style={{ justifyContent: 'center', alignSelf: 'center', alignItems: 'center' }}>
+                        <Text style={{ fontSize: 25, padding: 10 }}>Dr. Samin k. Sharma</Text>
+                        <Text style={{ fontSize: 20, padding: 0, alignItems: 'center' }}>7 years of experince</Text>
+                    </View>
 
-                <Text>
-                    Evening
-                </Text>
-                <ScrollView horizontal={true}>
-                    <Button title="5:00"/>
-                    <Button title="5:30"/>
-                    <Button title="6:00"/>
-                    <Button title="6:30"/>
-                </ScrollView>
+                    <CalendarStrip
+                        calendarAnimation={{ type: 'sequence', duration: 30 }}
+                        daySelectionAnimation={{
+                            type: 'border',
+                            duration: 200,
+                            borderWidth: 1.5,
+                            borderHighlightColor: 'black',
 
-                {/* <FlatList
+                        }}
+                        style={{ height: 100, paddingTop: 20, paddingBottom: 10, marginVertical: 15, marginHorizontal: -5, }}
+                        calendarHeaderStyle={{ color: 'black' }}
+                        calendarColor={'#EDF0F2'}
+                        dateNumberStyle={{ color: 'black' }}
+                        dateNameStyle={{ color: 'black' }}
+                        highlightDateNumberStyle={{ color: 'green' }}
+                        highlightDateNameStyle={{ color: 'green' }}
+                        disabledDateNameStyle={{ color: 'purpol' }}
+                        disabledDateNumberStyle={{ color: 'purpol' }}
+                        datesWhitelist={datesWhitelist}
+                        // datesBlacklist={datesBlacklist}
+                        iconContainer={{ flex: 0.05 }}
+                        selectedDate={new Date()}
+                        // selectedDate={moment(this.props.startDateFormatted)}
+                        onDateSelected={date => onDateSelected(date)}
+                    // onDateSelected={setdate => console.log(setdate)}
+
+                    />
+                    <Text style={{ margin: 0, height: 20 }}>
+                        Morning
+                </Text>
+                    <ScrollView horizontal={true} >
+                        {/* <Button title="10:00"/> */}
+                        <TouchableOpacity style={{
+                            backgroundColor: tmparr[0]? "#61BFFF": "white", height: 30,width: 80, borderRadius: 5, borderColor: 'black', borderWidth: 1,
+                            justifyContent: 'center', alignItems: 'center', margin: 5
+                        }}
+                        onPress={() =>{tmparr = [true, false, false, false, false, false, false, false, false, false, false, false], seton(on => !on)}}
+                        >
+                            <Text style={{ color: "black", fontSize: 15, padding: 5, paddingHorizontal: 10 }}>05:00</Text>
+
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{
+                             backgroundColor: tmparr[1]? "#61BFFF": "white", height: 30,width: 80, borderRadius: 5, borderColor: 'black', borderWidth: 1,
+                            justifyContent: 'center', alignItems: 'center', margin: 5
+                        }}
+                        onPress={() =>{tmparr = [false, true, false, false, false, false, false, false, false, false, false, false], seton(on => !on)}}
+                        >
+                            <Text style={{ color: "black", fontSize: 15, padding: 5, paddingHorizontal: 10 }}>05:30</Text>
+
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{
+                            backgroundColor: tmparr[2]? "#61BFFF": "white", height: 30,width: 80, borderRadius: 5, borderColor: 'black', borderWidth: 1,
+                            justifyContent: 'center', alignItems: 'center', margin: 5
+                        }}
+                        onPress={() =>{tmparr = [false, false, true, false, false, false, false, false, false, false, false, false], seton(on => !on)}}
+                        >
+                            <Text style={{ color: "black", fontSize: 15, padding: 5, paddingHorizontal: 10 }}>06:00</Text>
+
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{
+                            backgroundColor: tmparr[3]? "#61BFFF": "white", height: 30, width: 80, borderRadius: 5, borderColor: 'black', borderWidth: 1,
+                            justifyContent: 'center', alignItems: 'center', margin: 5
+                        }}
+                            onPress={() =>{tmparr = [false, false, false, true, false, false, false, false, false, false, false, false], seton(on => !on)}}
+                        >
+                            <Text style={{ color: "black", fontSize: 15 , padding: 5, paddingHorizontal: 10 }}>06:30</Text>
+
+                        </TouchableOpacity>
+                        {/* <Button title="11:30" /> */}
+                    </ScrollView>
+                    <Text>
+                        Afternoon
+                </Text>
+                    <ScrollView horizontal={true}>
+                    <TouchableOpacity style={{
+                            backgroundColor: tmparr[4]? "#61BFFF": "white", height: 30,width: 80, borderRadius: 5, borderColor: 'black', borderWidth: 1,
+                            justifyContent: 'center', alignItems: 'center', margin: 5
+                        }}
+                        onPress={() =>{tmparr = [false, false, false, false, true, false, false, false, false, false, false, false], seton(on => !on)}}
+                        >
+                            <Text style={{ color: "black", fontSize: 15, padding: 5, paddingHorizontal: 10 }}>05:00</Text>
+
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{
+                             backgroundColor: tmparr[5]? "#61BFFF": "white", height: 30,width: 80, borderRadius: 5, borderColor: 'black', borderWidth: 1,
+                            justifyContent: 'center', alignItems: 'center', margin: 5
+                        }}
+                        onPress={() =>{tmparr = [false, false, false, false, false, true, false, false, false, false, false, false], seton(on => !on)}}
+                        >
+                            <Text style={{ color: "black", fontSize: 15, padding: 5, paddingHorizontal: 10 }}>05:30</Text>
+
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{
+                            backgroundColor: tmparr[6]? "#61BFFF": "white", height: 30,width: 80, borderRadius: 5, borderColor: 'black', borderWidth: 1,
+                            justifyContent: 'center', alignItems: 'center', margin: 5
+                        }}
+                        onPress={() =>{tmparr = [false, false, false, false, false, false, true, false, false, false, false, false], seton(on => !on)}}
+                        >
+                            <Text style={{ color: "black", fontSize: 15, padding: 5, paddingHorizontal: 10 }}>06:00</Text>
+
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{
+                            backgroundColor: tmparr[7]? "#61BFFF": "white", height: 30, width: 80, borderRadius: 5, borderColor: 'black', borderWidth: 1,
+                            justifyContent: 'center', alignItems: 'center', margin: 5
+                        }}
+                            onPress={() =>{tmparr = [false, false, false, false, false, false, false, true, false, false, false, false], seton(on => !on)}}
+                        >
+                            <Text style={{ color: "black", fontSize: 15 , padding: 5, paddingHorizontal: 10 }}>06:30</Text>
+
+                        </TouchableOpacity>
+                    </ScrollView>
+
+                    <Text>
+                        Evening
+                </Text>
+                    <ScrollView horizontal={true}>
+                    <TouchableOpacity style={{
+                            backgroundColor: tmparr[8]? "#61BFFF": "white", height: 30,width: 80, borderRadius: 5, borderColor: 'black', borderWidth: 1,
+                            justifyContent: 'center', alignItems: 'center', margin: 5
+                        }}
+                        onPress={() =>{tmparr = [false, false, false, false, false, false, false, false, true, false, false, false], seton(on => !on)}}
+                        >
+                            <Text style={{ color: "black", fontSize: 15, padding: 5, paddingHorizontal: 10 }}>05:00</Text>
+
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{
+                             backgroundColor: tmparr[9]? "#61BFFF": "white", height: 30,width: 80, borderRadius: 5, borderColor: 'black', borderWidth: 1,
+                            justifyContent: 'center', alignItems: 'center', margin: 5
+                        }}
+                        onPress={() =>{tmparr = [false, false, false, false, false, false, false, false, false, true, false, false], seton(on => !on)}}
+                        >
+                            <Text style={{ color: "black", fontSize: 15, padding: 5, paddingHorizontal: 10 }}>05:30</Text>
+
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{
+                            backgroundColor: tmparr[10]? "#61BFFF": "white", height: 30,width: 80, borderRadius: 5, borderColor: 'black', borderWidth: 1,
+                            justifyContent: 'center', alignItems: 'center', margin: 5
+                        }}
+                        onPress={() =>{tmparr = [false, false, false, false, false, false, false, false, false, false, true, false], seton(on => !on)}}
+                        >
+                            <Text style={{ color: "black", fontSize: 15, padding: 5, paddingHorizontal: 10 }}>06:00</Text>
+
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{
+                            backgroundColor: tmparr[11]? "#61BFFF": "white", height: 30, width: 80, borderRadius: 5, borderColor: 'black', borderWidth: 1,
+                            justifyContent: 'center', alignItems: 'center', margin: 5
+                        }}
+                            onPress={() =>{tmparr = [false, false, false, false, false, false, false, false, false, false, false, true], seton(on => !on)}}
+                        >
+                            <Text style={{ color: "black", fontSize: 15 , padding: 5, paddingHorizontal: 10 }}>06:30</Text>
+
+                        </TouchableOpacity>
+                    </ScrollView>
+
+                    {/* <FlatList
                     data={timeslote}
                     numColumns={3}
                     keyExtractor={item => item.id}
@@ -183,18 +282,18 @@ const BookNow = ({ navigation }) => {
                         )
                     }} /> */}
 
-            </View>
-            <View style={{ alignItems: 'center',marginTop: 0 }}>
-                <TouchableOpacity style={{
-                    backgroundColor: 'white', height: 50, width: 200, borderRadius: 15, borderColor: 'black', borderWidth: 1,
-                    justifyContent: 'center', alignItems: 'center', 
-                }}
-                onPress={() => alert("Your appointment is booked")} 
-                >
-                    <Text style={{ color: "#61BFFF", fontSize: 15, padding: 5 }}>Book an appointment</Text>
+                </View>
+                <View style={{ alignItems: 'center', marginTop: 0 }}>
+                    <TouchableOpacity style={{
+                        backgroundColor: 'white', height: 50, width: 200, borderRadius: 15, borderColor: 'black', borderWidth: 1,
+                        justifyContent: 'center', alignItems: 'center',
+                    }}
+                        onPress={() => alert("Your appointment is booked")}
+                    >
+                        <Text style={{ color: "#61BFFF", fontSize: 15, padding: 5 }}>Book an appointment</Text>
 
-                </TouchableOpacity>
-            </View>
+                    </TouchableOpacity>
+                </View>
 
             </ScrollView>
         </SafeAreaView>
